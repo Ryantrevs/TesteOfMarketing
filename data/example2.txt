@@ -1,0 +1,8 @@
+tcc suporte
+//*[@id="tads"]/div[3]/div/div/div[1]/a/div[1]/span
+
+trabalhos tcc
+//*[@id="tads"]/div[2]/div/div/div[1]/a/div[1]/span
+
+trabalhos tcc 
+//*[@id="tads"]/div[4]/div/div/div[1]/a/div[1]/span
