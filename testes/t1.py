@@ -21,7 +21,7 @@ def main():
     #elemento1 = navegador.elemento(nav,'//*[@id="tads"]/div[2]/div/div/div[1]/a/')
     #navegador.click(elemento1)
 
-    navegador.input(nav)
+    #navegador.input(nav)
     time.sleep(100)
     
 

@@ -10,7 +10,7 @@ from urllib.parse import quote
 
 def confNav():
     opt = opcoes.configurar()
-    navegador = webdriver.Chrome(options=opt, executable_path=r'C:\ProgramData\chocolatey\bin\chromedriver.exe')
+    navegador = webdriver.Chrome(options=opt, executable_path=r'/bin/chromedriver')
     navegador.maximize_window()
     navegador.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
     navegador.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.53 Safari/537.36'})
@@ -38,7 +38,7 @@ def submit(elemento):
 def digitar(elemento,texto):
     elemento.send_keys(texto)
 
-def find(navegador):
+def findADS(navegador):
     links = navegador.find_elements_by_class_name('rc') #I went on Google Search and found the container class for the link
     for link in links:
         #url = link.find_element_by_tag_name('a').get_attribute("href") #this code extracts the url of the HTML link
@@ -47,9 +47,21 @@ def find(navegador):
 def google(navegador):
     elementos = navegador.find_elements_by_class_name("uEierd")
     for elemento in elementos:
-        print(elemento.find_elements_by_tag_name('span')[2].text)
-    return elementos
+        if ("www.vrbo.com/") in elemento.find_elements_by_tag_name('span')[2].text:
+            print("funfou")
+            print(elemento.find_elements_by_tag_name('a')[0].text)
+            return elemento
+        else:
+            print(elemento)
 
-
+def elemento2(navegador,classe):
+    print("a classe é: {}".format(classe))
+    wait = WebDriverWait(navegador, 10)
+    elemnt = "."+classe
+    print(elemnt)
+    elemento = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, elemnt)))
+    for (item) in elemento:
+        print(elemento)
+    return elemento
 
     

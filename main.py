@@ -1,9 +1,9 @@
 import time
 from Configuracoes import navegador
-from testes import t1
+from Producao import mtksImoveis
 
 def main():
-    t1.main()
+    mtksImoveis.main()
         
 
 
